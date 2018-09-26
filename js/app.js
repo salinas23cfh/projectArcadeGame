@@ -27,13 +27,36 @@ Enemy.prototype.render = function() {
 
 class Hero {
     constructor() {
-        this.x = 0;
-        this.y = 0;
         this.sprite = 'images/char-boy.png';
+        this.step = 101;
+        this.jump = 83;
+        this.startX = this.step * 2;
+        this.startY = this.jump * 4;
+        this.x = this.startX;
+        this.y = this.startY;
+        
     }
     //Drawing Hero sprite on x and y postion
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+    //Hero Sprite movement x nd y postions
+    handleInput(input){
+        switch(input) {
+            case 'left':
+                this.x -= this.step;
+                break;
+            case 'up':
+                this.y -= this.jump;
+                break;
+            case 'right':
+                this.x += this.step;
+                break;
+            case 'down':
+                this.y += this.jump;
+                break;
+        }
+
     }
 }
 
