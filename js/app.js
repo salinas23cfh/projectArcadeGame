@@ -1,9 +1,12 @@
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function( x, y, speed) {
     this.x = 0;
-    this.y = 0;
+    this.y = y + 55;    // positioning
+    this.speed = speed;    
     this.sprite = 'images/enemy-bug.png';
     this.step = 101;
+    this.boundary = this.step * 5;
+    this.resetPos = -this.step;     // setting bug off screen
 };
 
 // Update the enemy's position, required method for game
@@ -13,9 +16,12 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     // Enemies running across screen
-    if(this.x < this.step * 4) {
+    if(this.x < this.boundary) {
         //How fast bugs run
-        this.x += 20 * dt; 
+        this.x += this.speed * dt; 
+    }
+    else {
+        this.x = this.resetPos;
     }
 
 };

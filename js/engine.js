@@ -1,7 +1,12 @@
 const player = new Hero();
-const bug1 = new Enemy();
+// Enemies of Hero Sprite
+const bug1 = new Enemy(-101, 0, 150);
+const bug2 = new Enemy(-101, 83, 125);
+const bug3 = new Enemy((-101*2.5), 83, 200);
+const bug4 = new Enemy((-101*2.5), 150, 200);
 const allEnemies = [];
-allEnemies.push(bug1);
+allEnemies.push(bug1, bug2, bug3, bug4);
+console.log(allEnemies);
 
 /* Engine.js
  * This file provides the game loop functionality (update entities and render),
