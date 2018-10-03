@@ -41,7 +41,7 @@ class Hero {
         this.step = 101;
         this.jump = 83;
         this.startX = this.step * 2;
-        this.startY = (this.jump * 5) - 20;
+        this.startY = (this.jump * 4) + 55;
         this.x = this.startX;
         this.y = this.startY;
         
@@ -76,6 +76,24 @@ class Hero {
         }
 
     }
+
+    update() {
+        //check for collision
+        for(let enemy of allEnemies) {
+            //Did player and enemy collide
+            if(this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && enemy.x < this.x +this.step/2)) {                
+                this.reset();
+            }
+            
+            
+        }
+
+    }
+    // Reset Hero Sprite to starting postion
+    reset() {
+        this.y = this.startY;
+        this.x = this.startX;
+}
 }
 
 
