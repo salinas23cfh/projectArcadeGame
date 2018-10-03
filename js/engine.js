@@ -60,11 +60,16 @@ var Engine = (function(global) {
          * for the next time this function is called.
          */
         lastTime = now;
-
+        if(player.victory === true) {
+            win.cancelAnimationFrame(id);
+        }
+        else {
+            id = win.requestAnimationFrame(main);
+        }          
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
          */
-        win.requestAnimationFrame(main);
+        
     }
 
     /* This function does some initial setup that should only occur once,
