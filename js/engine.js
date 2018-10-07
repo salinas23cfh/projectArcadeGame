@@ -1,11 +1,4 @@
-const player = new Hero();
-// Enemies of Hero Sprite
-const bug1 = new Enemy(-101, 0, 150);
-const bug2 = new Enemy(-101, 83, 125);
-const bug3 = new Enemy((-101*2.5), 83, 200);
-const allEnemies = [];
-allEnemies.push(bug1, bug2, bug3);
-console.log(allEnemies);
+
 
 /* Engine.js
  * This file provides the game loop functionality (update entities and render),
@@ -21,8 +14,10 @@ console.log(allEnemies);
  * This engine makes the canvas' context (ctx) object globally available to make 
  * writing app.js a little simpler to work with.
  */
-
+  
 var Engine = (function(global) {
+    
+  
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
      * set the canvas elements height/width and add it to the DOM.
@@ -32,10 +27,27 @@ var Engine = (function(global) {
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
         lastTime;
+        id;
+
+        
+        
+
+    const modal = document.querySelector('.modal-bg');
+    const replay = document.querySelector('.modal-button');
+
 
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
+
+
+     replay.addEventListener("click", function() {
+                modal.classList.toggle('.hide');
+                player.reset();
+                player.victory = false;
+                win.requestAnimationFrame(main);
+         });
+    
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
@@ -47,8 +59,13 @@ var Engine = (function(global) {
          * would be the same for everyone (regardless of how fast their
          * computer is) - hurray time!
          */
+       
+
         var now = Date.now(),
             dt = (now - lastTime) / 1000.0;
+
+       
+
 
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
@@ -60,8 +77,13 @@ var Engine = (function(global) {
          * for the next time this function is called.
          */
         lastTime = now;
+        
+        
+   
         if(player.victory === true) {
             win.cancelAnimationFrame(id);
+            //modal window
+            modal.classList.toggle('.hide');
         }
         else {
             id = win.requestAnimationFrame(main);
@@ -69,7 +91,7 @@ var Engine = (function(global) {
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
          */
-        
+       
     }
 
     /* This function does some initial setup that should only occur once,

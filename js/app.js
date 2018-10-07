@@ -102,7 +102,14 @@ class Hero {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
+const player = new Hero();
+// Enemies of Hero Sprite
+const bug1 = new Enemy(-101, 0, 150);
+const bug2 = new Enemy(-101, 83, 125);
+const bug3 = new Enemy((-101*2.5), 83, 200);
+const allEnemies = [];
+allEnemies.push(bug1, bug2, bug3);
+console.log(allEnemies);
 
 
 // This listens for key presses and sends the keys to your
