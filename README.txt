@@ -1,6 +1,32 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+Project Arcade Game 
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+How to Play
+
+Move Hero sprite from the grass to the water without getting hit by the emeny bugs.
+
+How to move
+
+1. the up arrow button to move foward
+2. the down arrow button to move back 
+3. the right arrow button to move right
+4. the left arrow button to move left
+
+
+Contributors
+
+Christopher Salinas
+Udacity Starter code
+
+
+
+
+
+
+
+
+
+
+

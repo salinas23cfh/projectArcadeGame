@@ -27,13 +27,14 @@ var Engine = (function(global) {
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
         lastTime;
-        id;
+    var id;
 
         
         
 
     const modal = document.querySelector('.modal-bg');
     const replay = document.querySelector('.modal-button');
+    const finish = document.querySelector('.cancel-button');
 
 
     canvas.width = 505;
@@ -41,12 +42,19 @@ var Engine = (function(global) {
     doc.body.appendChild(canvas);
 
 
-     replay.addEventListener("click", function() {
-                modal.classList.toggle('.hide');
+    replay.addEventListener("click", function() {
+                modal.classList.toggle('hide');
                 player.reset();
                 player.victory = false;
                 win.requestAnimationFrame(main);
          });
+    
+    finish.addEventListener("click", function() {
+        modal.classList.toggle('hide');
+        player.reset();
+        player.victory = false;
+
+    });
     
 
     /* This function serves as the kickoff point for the game loop itself
@@ -83,7 +91,7 @@ var Engine = (function(global) {
         if(player.victory === true) {
             win.cancelAnimationFrame(id);
             //modal window
-            modal.classList.toggle('.hide');
+            modal.classList.toggle('hide');
         }
         else {
             id = win.requestAnimationFrame(main);
@@ -93,6 +101,10 @@ var Engine = (function(global) {
          */
        
     }
+
+ 
+
+
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
@@ -209,7 +221,8 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        
     ]);
     Resources.onReady(init);
 
