@@ -1,5 +1,8 @@
 // Enemies our player must avoid
 var Enemy = function( x, y, speed) {
+
+    //X pos
+    //Y pos
     this.x = 0;
     this.y = y + 55;    // positioning
     this.speed = speed;    
@@ -20,6 +23,7 @@ Enemy.prototype.update = function(dt) {
         //How fast bugs run
         this.x += this.speed * dt; 
     }
+    // reset to start position
     else {
         this.x = this.resetPos;
     }
@@ -56,22 +60,22 @@ class Hero {
         switch(input) {
             case 'left':
                 if(this.x > 0){
-                    this.x -= this.step;                    
+                    this.x -= this.step;                                       
                 }                
                 break;
             case 'up':
-            if(this.y > this.jump){
-                this.y -= this.jump;                    
+                if(this.y > this.jump){
+                    this.y -= this.jump;                    
                 }    
                 break;
             case 'right':
-            if(this.x < this.step * 4) {
-                this.x += this.step;                    
+                if(this.x < this.step * 4) {
+                    this.x += this.step;                    
                 }    
                 break;
             case 'down':
-            if(this.y < this.jump * 4){
-                this.y += this.jump;                    
+                if(this.y < this.jump * 4){
+                    this.y += this.jump;                    
                 }    
                 break;
         }
@@ -82,11 +86,11 @@ class Hero {
         //check for collision
         for(let enemy of allEnemies) {
             //Did player and enemy collide
-            if(this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && enemy.x < this.x +this.step/2)) {                
+            if(this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && enemy.x < this.x +this.step/2)) {              
                 this.reset();
             }            
-          if(this.y === 55) {
-              this.victory = true;
+            if(this.y === 55) {
+                this.victory = true;
           }  
         }
 
@@ -109,7 +113,6 @@ const bug2 = new Enemy(-101, 83, 125);
 const bug3 = new Enemy((-101*2.5), 83, 200);
 const allEnemies = [];
 allEnemies.push(bug1, bug2, bug3);
-console.log(allEnemies);
 
 
 // This listens for key presses and sends the keys to your
