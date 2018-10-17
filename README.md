@@ -1,13 +1,13 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Project Arcade Game 
+# Project Arcade Game 
 
-##How to Play
+### How to Play
 
 Move Hero sprite from the grass to the water without getting hit by the emeny bugs.
 
-##How to move
+### How to move
 
 1. the up arrow button to move foward
 2. the down arrow button to move back 
@@ -15,20 +15,20 @@ Move Hero sprite from the grass to the water without getting hit by the emeny bu
 4. the left arrow button to move left
 
 
-##Contributors
+### Contributors
 
-Christopher Salinas
+- Christopher Salinas
 
-Acknowledgments
+### Acknowledgments
 
 Thank you to the Udacity Staff and students for the help along the way with this project.
 
-Resources:
+### Resources:
 
-Udacity Starter code
-Fend Resources Blog Walk Through
+- Udacity Starter code
+- Fend Resources Blog Walk Through
 
-Changelog
+### Changelog
 
 1. working on modal window
 2. working on modal window
@@ -40,6 +40,10 @@ Changelog
 8. working on hero sprite movement
 9. working on Hero Sprite
 
+### Installation
+- Clone file to local computer 
+- Open index.html file 
+- Begin to play
 
 
 
